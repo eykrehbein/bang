@@ -45,27 +45,54 @@ const bang = url => {
 	if (qRes !== null) {
 		// split by spaces
 		const qArray = qRes.split('+');
+
+		// check if a custom TLD is wanted. Example: !a-de will redirect you to amazon.de instead of amazon.com
+		let useCustomTLD = false;
+		let customTLD = '';
+		if (qArray[0].includes('-')) {
+			useCustomTLD = true;
+			customTLD = qArray[0].split('-')[1];
+		}
+
 		// if no search term is given e.g. just !a
 		if (qArray.length === 1) {
 			for (let cmd of commands) {
-				if (cmd.cmd == qArray[0]) {
-					redirect(cmd.target);
+				if (cmd.cmd == qArray[0] || cmd.cmd.split('-')[0]) {
+					// replace tld placeholder
+					let target;
+					if (useCustomTLD === true) {
+						target = cmd.target.replace(/{{tld}}/, customTLD);
+					} else {
+						target = cmd.target.replace(/{{tld}}/, cmd.default_tld);
+					}
+					redirect(target);
 					return;
 				}
 			}
 		} else {
 			const searchString = qRes.slice(qArray[0].length + 1);
 			for (let cmd of commands) {
-				if (cmd.cmd == qArray[0]) {
+				if (cmd.cmd == qArray[0] || cmd.cmd.split('-')[0]) {
 					// if no search term was defined, redirect to the simple target location
 					if (typeof cmd.target_s === 'undefined') {
-						redirect(cmd.target);
+						// replace tld placeholder
+						let target;
+						if (useCustomTLD === true) {
+							target = cmd.target.replace(/{{tld}}/, customTLD);
+						} else {
+							target = cmd.target.replace(/{{tld}}/, cmd.default_tld);
+						}
+						redirect(target);
 						return;
 					} else {
-						let replacedSearchString = cmd.target_s.replace(
-							/{{{q}}}/g,
-							searchString
-						);
+						// replace tld placeholder
+						let target;
+						if (useCustomTLD === true) {
+							target = cmd.target_s.replace(/{{tld}}/, customTLD);
+						} else {
+							target = cmd.target_s.replace(/{{tld}}/, cmd.default_tld);
+						}
+						let replacedSearchString = target.replace(/{{{q}}}/g, searchString);
 						redirect(replacedSearchString);
 					}
 				}

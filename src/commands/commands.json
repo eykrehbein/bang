@@ -2,8 +2,10 @@
 	"cmds": [
 		{
 			"cmd": "!a",
-			"target": "https://www.amazon.de/",
-			"target_s": "https://www.amazon.de/s?k={{{q}}}"
+			"name": "Amazon",
+			"default_tld": "com",
+			"target": "https://www.amazon.{{tld}}/",
+			"target_s": "https://www.amazon.{{tld}}/s?k={{{q}}}"
 		}
 	]
 }
