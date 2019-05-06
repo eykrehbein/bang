@@ -8,11 +8,11 @@
 			"target_s": "https://www.amazon.{{lang/tld}}/s?k={{{q}}}"
 		},
 		{
-			"cmd": "!a",
-			"name": "Amazon",
-			"default_tld": "com",
-			"target": "https://www.amazon.{{lang/tld}}/",
-			"target_s": "https://www.amazon.{{lang/tld}}/s?k={{{q}}}"
+			"cmd": "!w",
+			"name": "Wikipedia",
+			"default_tld": "en",
+			"target": "https://{{lang/tld}}.wikipedia.org/",
+			"target_s": "https://{{lang/tld}}.wikipedia.org/wiki/{{{q}}}"
 		}
 	]
 }
