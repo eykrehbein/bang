@@ -61,9 +61,9 @@ const bang = url => {
 					// replace tld placeholder
 					let target;
 					if (useCustomTLD === true) {
-						target = cmd.target.replace(/{{tld}}/, customTLD);
+						target = cmd.target.replace(/{{lang\/tld}}/, customTLD);
 					} else {
-						target = cmd.target.replace(/{{tld}}/, cmd.default_tld);
+						target = cmd.target.replace(/{{lang\/tld}}/, cmd.default_tld);
 					}
 					redirect(target);
 					return;
@@ -78,9 +78,9 @@ const bang = url => {
 						// replace tld placeholder
 						let target;
 						if (useCustomTLD === true) {
-							target = cmd.target.replace(/{{tld}}/, customTLD);
+							target = cmd.target.replace(/{{lang\/tld}}/, customTLD);
 						} else {
-							target = cmd.target.replace(/{{tld}}/, cmd.default_tld);
+							target = cmd.target.replace(/{{lang\/tld}}/, cmd.default_tld);
 						}
 						redirect(target);
 						return;
@@ -88,9 +88,9 @@ const bang = url => {
 						// replace tld placeholder
 						let target;
 						if (useCustomTLD === true) {
-							target = cmd.target_s.replace(/{{tld}}/, customTLD);
+							target = cmd.target_s.replace(/{{lang\/tld}}/, customTLD);
 						} else {
-							target = cmd.target_s.replace(/{{tld}}/, cmd.default_tld);
+							target = cmd.target_s.replace(/{{lang\/tld}}/, cmd.default_tld);
 						}
 						let replacedSearchString = target.replace(/{{{q}}}/g, searchString);
 						redirect(replacedSearchString);
