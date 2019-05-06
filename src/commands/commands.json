@@ -1,0 +1,9 @@
+{
+	"cmds": [
+		{
+			"cmd": "!a",
+			"target": "https://www.amazon.de/",
+			"target_s": "https://www.amazon.de/s?k={{{q}}}"
+		}
+	]
+}
