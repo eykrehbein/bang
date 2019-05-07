@@ -11,6 +11,12 @@
 			"name": "Wikipedia",
 			"target": "https://{{lang}}.wikipedia.org/",
 			"target_s": "https://{{lang}}.wikipedia.org/wiki/{{{q}}}"
+		},
+		{
+			"cmd": "!gh",
+			"name": "Github",
+			"target": "https://github.com/",
+			"target_s": "https://github.com/search?q={{{q}}}"
 		}
 	]
 }
