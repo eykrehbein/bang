@@ -100,6 +100,12 @@
 			"name": "Google Keep",
 			"target": "https://keep.google.com",
 			"target_s": "https://keep.google.com/#search/text%253D{{q}}"
+		},
+		{
+			"cmd": "!images",
+			"name": "Google Images",
+			"target": "https://www.google.{{tld}}/imghp",
+			"target_s": "https://www.google.{{tld}}/search?source=hp&q={{q}}"
 		}
 	]
 }
