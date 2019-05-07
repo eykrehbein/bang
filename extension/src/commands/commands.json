@@ -3,19 +3,19 @@
 		{
 			"cmd": "!a",
 			"name": "Amazon",
-			"target": "https://www.amazon.{{tld}}/",
+			"target": "https://www.amazon.{{tld}}",
 			"target_s": "https://www.amazon.{{tld}}/s?k={{{q}}}"
 		},
 		{
 			"cmd": "!w",
 			"name": "Wikipedia",
-			"target": "https://{{lang}}.wikipedia.org/",
+			"target": "https://{{lang}}.wikipedia.org",
 			"target_s": "https://{{lang}}.wikipedia.org/wiki/{{{q}}}"
 		},
 		{
 			"cmd": "!gh",
 			"name": "Github",
-			"target": "https://github.com/",
+			"target": "https://github.com",
 			"target_s": "https://github.com/search?q={{{q}}}"
 		},
 		{
@@ -35,6 +35,12 @@
 			"name": "Twitter",
 			"target": "https://twitter.com",
 			"target_s": "https://twitter.com/search?q={{{q}}}"
+		},
+		{
+			"cmd": "!li",
+			"name": "LinkedIn",
+			"target": "https://www.linkedin.com",
+			"target_s": "https://www.linkedin.com/search/results/all/?keywords={{{q}}}"
 		}
 	]
 }
