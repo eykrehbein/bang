@@ -18,7 +18,7 @@ Bang is a shortcut parser for your URL Bar. __But instead of explaining it it bo
 <br/>
 
 - What you type into the URL Bar: `!gmail label: Important`
-- Which URL is going to be opened: `https://mail.google.com/mail/#search/Anna`
+- Which URL is going to be opened: `https://mail.google.com/mail/#search/label%3A+Important`
 - Purpose: Search your Gmail Account for all Emails that have the label "Important"
 
 ---
