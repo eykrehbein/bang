@@ -3,8 +3,6 @@
  *
  * Eyk Rehbein
  */
-const jsonCommandsUrl = chrome.runtime.getURL('src/commands/commands.json');
-
 // the commands from the json file will be stored here
 let commands = {};
 
@@ -89,7 +87,7 @@ const bang = url => {
 		// if no search term is given e.g. just !a
 		if (qArray.length === 1) {
 			for (let cmd of commands) {
-				if (cmd.cmd == qArray[0] || cmd.cmd.split('-')[0]) {
+				if (cmd.cmd === qArray[0] || qArray[0].split('-')[0] === cmd.cmd) {
 					// replace tld placeholder
 					let target = cmd.target;
 					// if a custom tld/lang is wanted e.g. !a-de
@@ -130,12 +128,12 @@ const bang = url => {
 	return;
 };
 
-// fetch all commands from commands/commands.json
-fetch(jsonCommandsUrl)
-	.then(response => response.json()) //
+// fetch all commands from netlify host (it's always synced with the latest github version)
+fetch('https://bang-app.netlify.com/extension/src/commands/commands.json')
+	.then(response => response.json())
 	.then(json => {
 		commands = json.cmds;
-
+		console.log(json);
 		// Create a listener for all navigation changes
 		chrome.webNavigation.onBeforeNavigate.addListener(details => {
 			chrome.tabs.query({ active: true, lastFocusedWindow: true }, tabs => {
