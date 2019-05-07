@@ -47,6 +47,54 @@
 			"name": "Youtube",
 			"target": "https://www.youtube.{{tld}}",
 			"target_s": "https://www.youtube.{{tld}}/results?search_query={{q}}"
+		},
+		{
+			"cmd": "!gdocs",
+			"name": "Google Docs",
+			"target": "https://docs.google.com/document",
+			"target_s": "https://docs.google.com/document/?q={{q}}"
+		},
+		{
+			"cmd": "!gsheets",
+			"name": "Google Spreadsheets",
+			"target": "https://docs.google.com/spreadsheets",
+			"target_s": "https://docs.google.com/spreadsheets/?q={{q}}"
+		},
+		{
+			"cmd": "!gslides",
+			"name": "Google Presentations (Slides)",
+			"target": "https://docs.google.com/presentation",
+			"target_s": "https://docs.google.com/presentation/?q={{q}}"
+		},
+		{
+			"cmd": "!gdrive",
+			"name": "Google Drive",
+			"target": "https://drive.google.com/drive",
+			"target_s": "https://drive.google.com/drive/search?q={{q}}"
+		},
+		{
+			"cmd": "!gmail",
+			"name": "Gmail",
+			"target": "https://mail.google.com/mail",
+			"target_s": "https://mail.google.com/mail/#search/{{q}}"
+		},
+		{
+			"cmd": "!gcal",
+			"name": "Google Calendar",
+			"target": "https://calendar.google.com/calendar",
+			"target_s": "https://calendar.google.com/calendar/r/search?q={{q}}"
+		},
+		{
+			"cmd": "!gphotos",
+			"name": "Google Photos",
+			"target": "https://photos.google.com",
+			"target_s": "https://photos.google.com/search/{{q}}"
+		},
+		{
+			"cmd": "!gkeep",
+			"name": "Google Keep",
+			"target": "https://keep.google.com",
+			"target_s": "https://keep.google.com/#search/text%253D{{q}}"
 		}
 	]
 }
