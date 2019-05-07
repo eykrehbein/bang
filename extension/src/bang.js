@@ -1,5 +1,5 @@
 /**
- * "Shortz" Google Chrome Extension.
+ * "Bang" Google Chrome Extension.
  *
  * Eyk Rehbein
  */
