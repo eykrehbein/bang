@@ -68,7 +68,7 @@ Care! Just use {{tld}} __OR__ {{lang}} in one string.
 > The search query placeholder. Place it at the position where the search goes. Example: `https://google.com/search?q={{q}}`, because if you search for e.g. `shoes`, the search term looks like `https://google.com/search?q=shoes`. Understood?
 
 ## Options
-As mentioned above, you can easily change and update your _Language Settings_, as well as your _Default TLD_. Those will be inserted inside the `{{tld}}` or `{{lang}}` placeholders in the URL string.
+As mentioned above, you can easily change and update your _Language Settings_, as well as your _Default TLD_. Those will be inserted inside the `{{tld}}` or `{{lang}}` placeholders in the URL string. Defaults are `com` for TLD and `en` for language.
 
 ### Steps:
 1. Left-click on the icon of this extension in the upper right-hand corner of your Browser. 
