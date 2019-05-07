@@ -17,6 +17,12 @@
 			"name": "Github",
 			"target": "https://github.com/",
 			"target_s": "https://github.com/search?q={{{q}}}"
+		},
+		{
+			"cmd": "!so",
+			"name": "StackOverflow",
+			"target": "https://stackoverflow.com",
+			"target_s": "https://stackoverflow.com/search?q={{{q}}}"
 		}
 	]
 }
