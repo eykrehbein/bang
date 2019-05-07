@@ -19,6 +19,11 @@
 			"target_s": "https://github.com/search?q={{q}}"
 		},
 		{
+			"cmd": "!ghtrends",
+			"name": "Github Trending",
+			"target": "https://github.com/trending"
+		},
+		{
 			"cmd": "!so",
 			"name": "StackOverflow",
 			"target": "https://stackoverflow.com",
