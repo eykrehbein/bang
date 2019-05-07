@@ -1,0 +1,16 @@
+{
+	"cmds": [
+		{
+			"cmd": "!a",
+			"name": "Amazon",
+			"target": "https://www.amazon.{{tld}}/",
+			"target_s": "https://www.amazon.{{tld}}/s?k={{{q}}}"
+		},
+		{
+			"cmd": "!w",
+			"name": "Wikipedia",
+			"target": "https://{{lang}}.wikipedia.org/",
+			"target_s": "https://{{lang}}.wikipedia.org/wiki/{{{q}}}"
+		}
+	]
+}
