@@ -22,7 +22,7 @@ const parseGoogleURL = url => {
 		if (q.startsWith('!')) {
 			return q;
 		}
-	} catch {}
+	} catch (e) {}
 
 	return null;
 };
@@ -111,14 +111,10 @@ const bang = url => {
 						redirect(target);
 						return;
 					} else {
-						console.log('fired');
-
 						// replace tld placeholder
 						let target = cmd.target_s;
-						console.log(target);
 						target = repl(useCustomTLDLang, customTLDLang, target);
-						console.log(target);
-						let replacedSearchString = target.replace(/{{{q}}}/g, searchString);
+						let replacedSearchString = target.replace(/{{q}}/, searchString);
 						redirect(replacedSearchString);
 					}
 				}
@@ -133,7 +129,6 @@ fetch('https://bang-app.netlify.com/extension/src/commands/commands.json')
 	.then(response => response.json())
 	.then(json => {
 		commands = json.cmds;
-		console.log(json);
 		// Create a listener for all navigation changes
 		chrome.webNavigation.onBeforeNavigate.addListener(details => {
 			chrome.tabs.query({ active: true, lastFocusedWindow: true }, tabs => {

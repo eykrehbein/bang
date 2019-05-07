@@ -4,49 +4,49 @@
 			"cmd": "!a",
 			"name": "Amazon",
 			"target": "https://www.amazon.{{tld}}",
-			"target_s": "https://www.amazon.{{tld}}/s?k={{{q}}}"
+			"target_s": "https://www.amazon.{{tld}}/s?k={{q}}"
 		},
 		{
 			"cmd": "!w",
 			"name": "Wikipedia",
 			"target": "https://{{lang}}.wikipedia.org",
-			"target_s": "https://{{lang}}.wikipedia.org/wiki/{{{q}}}"
+			"target_s": "https://{{lang}}.wikipedia.org/wiki/{{q}}"
 		},
 		{
 			"cmd": "!gh",
 			"name": "Github",
 			"target": "https://github.com",
-			"target_s": "https://github.com/search?q={{{q}}}"
+			"target_s": "https://github.com/search?q={{q}}"
 		},
 		{
 			"cmd": "!so",
 			"name": "StackOverflow",
 			"target": "https://stackoverflow.com",
-			"target_s": "https://stackoverflow.com/search?q={{{q}}}"
+			"target_s": "https://stackoverflow.com/search?q={{q}}"
 		},
 		{
 			"cmd": "!fb",
 			"name": "Facebook",
 			"target": "https://facebook.com",
-			"target_s": "https://www.facebook.com/search/top/?q={{{q}}}"
+			"target_s": "https://www.facebook.com/search/top/?q={{q}}"
 		},
 		{
 			"cmd": "!tw",
 			"name": "Twitter",
 			"target": "https://twitter.com",
-			"target_s": "https://twitter.com/search?q={{{q}}}"
+			"target_s": "https://twitter.com/search?q={{q}}"
 		},
 		{
 			"cmd": "!li",
 			"name": "LinkedIn",
 			"target": "https://www.linkedin.com",
-			"target_s": "https://www.linkedin.com/search/results/all/?keywords={{{q}}}"
+			"target_s": "https://www.linkedin.com/search/results/all/?keywords={{q}}"
 		},
 		{
 			"cmd": "!yt",
 			"name": "Youtube",
-			"target": "https://www.youtube.{{{tld}}}",
-			"target_s": "https://www.youtube.{{{tld}}}/results?search_query={{{q}}}"
+			"target": "https://www.youtube.{{tld}}",
+			"target_s": "https://www.youtube.{{tld}}/results?search_query={{q}}"
 		}
 	]
 }
