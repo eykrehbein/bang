@@ -23,6 +23,12 @@
 			"name": "StackOverflow",
 			"target": "https://stackoverflow.com",
 			"target_s": "https://stackoverflow.com/search?q={{{q}}}"
+		},
+		{
+			"cmd": "!fb",
+			"name": "Facebook",
+			"target": "https://facebook.com",
+			"target_s": "https://www.facebook.com/search/top/?q={{{q}}}"
 		}
 	]
 }
