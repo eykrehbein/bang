@@ -41,6 +41,12 @@
 			"name": "LinkedIn",
 			"target": "https://www.linkedin.com",
 			"target_s": "https://www.linkedin.com/search/results/all/?keywords={{{q}}}"
+		},
+		{
+			"cmd": "!yt",
+			"name": "Youtube",
+			"target": "https://www.youtube.{{{tld}}}",
+			"target_s": "https://www.youtube.{{{tld}}}/results?search_query={{{q}}}"
 		}
 	]
 }
