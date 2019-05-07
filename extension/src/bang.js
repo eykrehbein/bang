@@ -29,6 +29,38 @@ const parseGoogleURL = url => {
 	return null;
 };
 
+const repl = (useCustomTLDLang, customTLDLang, gtarget) => {
+	let target = gtarget;
+	// if a custom tld/lang is wanted e.g. !a-de
+	if (useCustomTLDLang === true) {
+		// replace either {{lang}} or {{tld}}
+		target = target.replace(/{{(?:lang|tld)}}/, customTLDLang);
+	} else {
+		// if no custom tld/lang is wanted e.g. !a
+		// => just set the {{lang}} or {{tld}} to the localStore settings
+
+		// if bang_tld localStorage setting exists
+		if (localStorage.getItem('bang_tld') !== null) {
+			target = target.replace(/{{tld}}/, localStorage.getItem('bang_tld'));
+		} else {
+			// bang_tld localStorage doesn't exist => set it to com
+			target = target.replace(/{{tld}}/, 'com');
+			localStorage.setItem('bang_tld', 'com');
+		}
+
+		// if bang_lang localStorage setting exists
+		if (localStorage.getItem('bang_lang') !== null) {
+			target = target.replace(/{{lang}}/, localStorage.getItem('bang_lang'));
+		} else {
+			// bang_lang localStorage doesn't exist => set it to en
+			target = target.replace(/{{lang}}/, 'en');
+			localStorage.setItem('bang_lang', 'en');
+		}
+	}
+
+	return target;
+};
+
 /**
  * Redirect the tab to a new location
  * @param {string} newLocation URL
@@ -46,12 +78,12 @@ const bang = url => {
 		// split by spaces
 		const qArray = qRes.split('+');
 
-		// check if a custom TLD is wanted. Example: !a-de will redirect you to amazon.de instead of amazon.com
-		let useCustomTLD = false;
-		let customTLD = '';
+		// check if a custom TLD or Lang is wanted. Example: !a-de will redirect you to amazon.de instead of amazon.com
+		let useCustomTLDLang = false;
+		let customTLDLang = '';
 		if (qArray[0].includes('-')) {
-			useCustomTLD = true;
-			customTLD = qArray[0].split('-')[1];
+			useCustomTLDLang = true;
+			customTLDLang = qArray[0].split('-')[1];
 		}
 
 		// if no search term is given e.g. just !a
@@ -59,12 +91,10 @@ const bang = url => {
 			for (let cmd of commands) {
 				if (cmd.cmd == qArray[0] || cmd.cmd.split('-')[0]) {
 					// replace tld placeholder
-					let target;
-					if (useCustomTLD === true) {
-						target = cmd.target.replace(/{{lang\/tld}}/, customTLD);
-					} else {
-						target = cmd.target.replace(/{{lang\/tld}}/, cmd.default_tld);
-					}
+					let target = cmd.target;
+					// if a custom tld/lang is wanted e.g. !a-de
+					target = repl(useCustomTLDLang, customTLDLang, target);
+
 					redirect(target);
 					return;
 				}
@@ -72,26 +102,24 @@ const bang = url => {
 		} else {
 			const searchString = qRes.slice(qArray[0].length + 1);
 			for (let cmd of commands) {
-				if (cmd.cmd == qArray[0] || cmd.cmd.split('-')[0]) {
-					// if no search term was defined, redirect to the simple target location
+				if (cmd.cmd == qArray[0] || qArray[0].split('-')[0] == cmd.cmd) {
+					// if a search query was typed by the user but the given cmd has no search specific URL in the config, redirect to the simple target with no search.
 					if (typeof cmd.target_s === 'undefined') {
 						// replace tld placeholder
-						let target;
-						if (useCustomTLD === true) {
-							target = cmd.target.replace(/{{lang\/tld}}/, customTLD);
-						} else {
-							target = cmd.target.replace(/{{lang\/tld}}/, cmd.default_tld);
-						}
+						let target = cmd.target;
+
+						target = repl(useCustomTLDLang, customTLDLang, target);
+
 						redirect(target);
 						return;
 					} else {
+						console.log('fired');
+
 						// replace tld placeholder
-						let target;
-						if (useCustomTLD === true) {
-							target = cmd.target_s.replace(/{{lang\/tld}}/, customTLD);
-						} else {
-							target = cmd.target_s.replace(/{{lang\/tld}}/, cmd.default_tld);
-						}
+						let target = cmd.target_s;
+						console.log(target);
+						target = repl(useCustomTLDLang, customTLDLang, target);
+						console.log(target);
 						let replacedSearchString = target.replace(/{{{q}}}/g, searchString);
 						redirect(replacedSearchString);
 					}

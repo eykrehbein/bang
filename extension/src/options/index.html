@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>Bang Options</title>
+		<link rel="stylesheet" href="style.css" />
+	</head>
+	<body>
+		<div class="app">
+			<form>
+				<div class="info">
+					<p class="csettings">
+						Current settings: TLD: <i><span class="activeTLD"></span></i> &
+						Language: <i><span class="activeLang"></span></i>
+					</p>
+				</div>
+				<div class="row">
+					<input
+						type="text"
+						class="tld"
+						placeholder="Input your default TLD e.g 'com'"
+					/>
+					<input
+						type="text"
+						class="lang"
+						placeholder="Input your default language code e.g. 'en'"
+						style="margin-left: 10px;"
+					/>
+				</div>
+				<div class="confirm">
+					<button class="confirmButton">Confirm</button>
+				</div>
+			</form>
+		</div>
+	</body>
+
+	<script src="options.js"></script>
+</html>
