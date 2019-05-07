@@ -105,7 +105,7 @@
 			"cmd": "!images",
 			"name": "Google Images",
 			"target": "https://www.google.{{tld}}/imghp",
-			"target_s": "https://www.google.{{tld}}/search?source=hp&q={{q}}"
+			"target_s": "https://www.google.{{tld}}/search?tbm=isch&q={{q}}"
 		}
 	]
 }
