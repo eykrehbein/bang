@@ -29,6 +29,12 @@
 			"name": "Facebook",
 			"target": "https://facebook.com",
 			"target_s": "https://www.facebook.com/search/top/?q={{{q}}}"
+		},
+		{
+			"cmd": "!tw",
+			"name": "Twitter",
+			"target": "https://twitter.com",
+			"target_s": "https://twitter.com/search?q={{{q}}}"
 		}
 	]
 }
