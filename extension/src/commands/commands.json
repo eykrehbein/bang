@@ -126,6 +126,11 @@
 			"cmd": "!awsc",
 			"name": "Amazon Web Services Console",
 			"target": "https://console.aws.amazon.com"
+		},
+		{
+			"cmd": "!udw",
+			"name": "unDraw",
+			"target": "https://undraw.co"
 		}
 	]
 }
