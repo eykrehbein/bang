@@ -1,0 +1,1 @@
+zip -r build.zip extension/icons extension/manifest.json extension/src/options extension/src/bang.js
