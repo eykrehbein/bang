@@ -137,6 +137,23 @@
 			"name": "DuckDuckGo",
 			"target": "https://duckduckgo.com",
 			"target_s": "https://duckduckgo.com/?q={{q}}"
+		},
+		{
+			"cmd": "!gt",
+			"name": "Google Translate",
+			"target": "https://translate.google.{{tld}}"
+		},
+		{
+			"cmd": "!gteg",
+			"name": "Google Translate English to German",
+			"target": "https://translate.google.{{tld}}/&op=translate&sl=en&tl=de",
+			"target_s": "https://translate.google.{{tld}}/&op=translate&sl=en&tl=de&text={{q}}"
+		},
+		{
+			"cmd": "!gtge",
+			"name": "Google Translate German to English",
+			"target": "https://translate.google.{{tld}}/&op=translate&sl=de&tl=en",
+			"target_s": "https://translate.google.{{tld}}/&op=translate&sl=de&tl=en&text={{q}}"
 		}
 	]
 }
