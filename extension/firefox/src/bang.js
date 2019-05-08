@@ -126,7 +126,7 @@ const bang = url => {
 };
 
 // fetch all commands from netlify host (it's always synced with the latest github version)
-fetch('https://bang-app.netlify.com/extension/src/commands/commands.json')
+fetch('https://bang-app.netlify.com/commands/commands.json')
 	.then(response => response.json())
 	.then(json => {
 		commands = json.cmds;
