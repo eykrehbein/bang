@@ -131,6 +131,12 @@
 			"cmd": "!udw",
 			"name": "unDraw",
 			"target": "https://undraw.co"
+		},
+		{
+			"cmd": "!ddg",
+			"name": "DuckDuckGo",
+			"target": "https://duckduckgo.com",
+			"target_s": "https://duckduckgo.com/?q={{q}}"
 		}
 	]
 }
