@@ -106,6 +106,26 @@
 			"name": "Google Images",
 			"target": "https://www.google.{{tld}}/imghp",
 			"target_s": "https://www.google.{{tld}}/search?tbm=isch&q={{q}}"
+		},
+		{
+			"cmd": "!gcp",
+			"name": "Google Cloud Platform",
+			"target": "https://cloud.google.com"
+		},
+		{
+			"cmd": "!aws",
+			"name": "Amazon Web Services",
+			"target": "https://aws.amazon.com"
+		},
+		{
+			"cmd": "!gcpc",
+			"name": "Google Cloud Platform Console",
+			"target": "https://console.cloud.google.com"
+		},
+		{
+			"cmd": "!awsc",
+			"name": "Amazon Web Services Console",
+			"target": "https://console.aws.amazon.com"
 		}
 	]
 }
