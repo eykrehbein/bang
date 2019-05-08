@@ -1,5 +1,5 @@
 /**
- * "Bang" Google Chrome Extension.
+ * "Bang"  Firefox Extension.
  *
  * Eyk Rehbein
  */
@@ -16,13 +16,14 @@ const parseGoogleURL = url => {
 		return null;
 	}
 
-	// Get Google search query
-	try {
-		const q = url.split('q=')[1].split('&')[0];
-		if (q.startsWith('!')) {
-			return q;
-		}
-	} catch (e) {}
+	let q = url.split('q=')[1];
+	if (q.includes('&')) {
+		q = q.split('&')[0];
+	}
+	q = q.replace(/%21/, '!');
+	if (q.startsWith('!')) {
+		return q;
+	}
 
 	return null;
 };
@@ -64,7 +65,7 @@ const repl = (useCustomTLDLang, customTLDLang, gtarget) => {
  * @param {string} newLocation URL
  */
 const redirect = newLocation => {
-	chrome.tabs.update({ url: newLocation });
+	browser.tabs.update({ url: newLocation });
 };
 
 const bang = url => {
@@ -74,7 +75,7 @@ const bang = url => {
 	// if the request is a google search request and the query started with a ! symbol
 	if (qRes !== null) {
 		// split by spaces
-		const qArray = qRes.split('+');
+		let qArray = qRes.split('+');
 
 		// check if a custom TLD or Lang is wanted. Example: !a-de will redirect you to amazon.de instead of amazon.com
 		let useCustomTLDLang = false;
@@ -125,13 +126,13 @@ const bang = url => {
 };
 
 // fetch all commands from netlify host (it's always synced with the latest github version)
-fetch('https://bang-app.netlify.com/extension/src/commands/commands.json')
+fetch('https://bang-app.netlify.com/commands/commands.json')
 	.then(response => response.json())
 	.then(json => {
 		commands = json.cmds;
 		// Create a listener for all navigation changes
-		chrome.webNavigation.onBeforeNavigate.addListener(details => {
-			chrome.tabs.query({ active: true, lastFocusedWindow: true }, tabs => {
+		browser.webNavigation.onCommitted.addListener(details => {
+			browser.tabs.query({ active: true, lastFocusedWindow: true }, tabs => {
 				// call bang function with the domain
 				bang(tabs[0].url);
 			});
