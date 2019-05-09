@@ -154,6 +154,12 @@
 			"name": "Google Translate German to English",
 			"target": "https://translate.google.{{tld}}/#view=home&op=translate&sl=de&tl=en",
 			"target_s": "https://translate.google.{{tld}}/#view=home&op=translate&sl=de&tl=en&text={{q}}"
+		},
+		{
+			"cmd": "!gfonts",
+			"name": "Google Fonts",
+			"target": "https://fonts.google.com",
+			"target_s": "https://fonts.google.com/?query={{q}}"
 		}
 	]
 }
