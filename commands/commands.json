@@ -160,6 +160,12 @@
 			"name": "Google Fonts",
 			"target": "https://fonts.google.com",
 			"target_s": "https://fonts.google.com/?query={{q}}"
+		},
+		{
+			"cmd": "!drb",
+			"name": "Dribbble",
+			"target": "https://dribbble.com",
+			"target_s": "https://dribbble.com/search?q={{q}}"
 		}
 	]
 }
