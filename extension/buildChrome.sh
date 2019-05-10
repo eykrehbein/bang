@@ -1,0 +1,1 @@
+zip -r chrome.zip chrome/ -FS
