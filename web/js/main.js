@@ -71,6 +71,15 @@ new Vue({
 				'_blank'
 			);
 		},
+		firefoxInstall() {
+			window.open(
+				'https://addons.mozilla.org/en-US/firefox/addon/bang-open-source',
+				'_blank'
+			);
+		},
+		fromSource() {
+			window.open('https://github.com/eykrehbein/bang/releases', '_blank');
+		},
 		fuzzySearchCommand(searchVal) {
 			const options = {
 				keys: ['name', 'cmd'],

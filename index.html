@@ -34,13 +34,25 @@
 						>
 							Add to Chrome
 						</button>
-						<button v-if="browser === 'firefox'" class="addButton">
+						<button
+							v-if="browser === 'firefox'"
+							@click="firefoxInstall"
+							class="addButton"
+						>
 							Add to Firefox
 						</button>
-						<button v-if="browser === 'opera'" class="addButton">
+						<button
+							v-if="browser === 'opera'"
+							@click="chromeInstall"
+							class="addButton"
+						>
 							Add to Opera
 						</button>
-						<button v-if="browser === null" class="addButton">
+						<button
+							v-if="browser === null"
+							@click="fromSource"
+							class="addButton"
+						>
 							Get it from source
 						</button>
 						<a
