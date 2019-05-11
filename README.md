@@ -45,46 +45,4 @@ You can also define a language or TLD tags directly in the URL bar. The direct i
 
 Currently, the amount of shortcuts which are included in this project is nowhere near the amount that DuckDuckGo provides (over 12.000). _**But you can help to increase the amount of supported shortcuts.**_. [See more at: How to add a Shortcut](#Contributing-shortcuts)
 
-## Contributing shortcuts
-
-Have you been on your favorite website like again and noticed that there is no shortcut for it? Well you can add it in less than one minute.
-
-1. Fork this repository
-2. Open [./commands/commands.json](./commands/commands.json)
-3. Make sure the entry does not exist already. Search for the name and URL of the website you want to add, first!
-4. Add your entry to the `cmds` array. Formatted like:
-
-```js
-{
-  "cmd": "!YOUR_COMMAND", // The command with an exclamation mark in front of it. e.g. "!a" (required)
-  "name": "MyWebsite Name", // The Name of the Website. e.g. "Amazon". Do not enter .com or any other TLD (required)
-  "target": "https://mywebsite.com", // The Default URL to redirect to if no search term is provided (required)
-  "target_s": "https://mywebsite.com/search?q={{q}}" // The Search URL string (optional)
-}
-
-```
-
-Variables/Placeholders:
-
-1. **`{{tld}}`**
-
-   > - If your URL contains a TLD (top-level-domain) that differs by location e.g. `amazon.com` and `amazon.co.uk`, make sure you replace the TLD string with this placeholder. For instance, `https://amazon.com` becomes `https://amazon.{{tld}}`.
-
-2. **`{{lang}}`**
-   > - The same procedures as with `{{tld}}`. For instance, Wikipedia has a static TLD (`.org`) but differs in it's subdomain. They use language tags like `en` or `fr` in there. That's what will be inserted by `{{lang}}`. Example: `https://en.wikipedia.org` becomes `https://{{lang}}.wikipedia.org`.
-
-Care! Just use {{tld}} **OR** {{lang}} in one string.
-
-3. **`{{q}}`**
-   > The search query placeholder. Place it at the position where the search goes. Example: `https://google.com/search?q={{q}}`, because if you search for e.g. `shoes`, the search term looks like `https://google.com/search?q=shoes`. Understood?
-
-## Options
-
-As mentioned above, you can easily change and update your _Language Settings_, as well as your _Default TLD_. Those will be inserted inside the `{{tld}}` or `{{lang}}` placeholders in the URL string. Defaults are `com` for TLD and `en` for language.
-
-### Steps:
-
-1. Left-click on the icon of this extension in the upper right-hand corner of your Browser.
-2. Select the `'Options'` menu item
-3. Insert your preferences into the input field
-4. Hit confirm and close the window
+# More information in the [wiki](https://github.com/eykrehbein/bang/wiki)
