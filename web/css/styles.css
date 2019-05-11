@@ -1,0 +1,137 @@
+html,
+body {
+	padding: 0;
+	margin: 0;
+	font-family: 'Open Sans';
+}
+.app {
+	width: 100%;
+	height: 100vh;
+	background-color: white;
+	display: flex;
+	justify-content: center;
+}
+.headers {
+	position: fixed;
+	top: 22px;
+	right: 86px;
+}
+.headers > a {
+	font-size: 13px;
+	color: black;
+}
+.center {
+	margin-top: 187px;
+	text-align: center;
+	display: flex;
+	width: auto;
+	flex-direction: column;
+	align-items: center;
+}
+.title {
+	font-size: 42px;
+	font-weight: bold;
+}
+.navbar {
+	margin-top: 30px;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+}
+.addButton {
+	width: 193px;
+	height: 40px;
+	background-color: #00cec9;
+	border: none;
+	color: white;
+	font-size: 16px;
+	font-weight: bold;
+	border-radius: 5px;
+	cursor: pointer;
+	transition-duration: 0.45s;
+}
+.addButton:hover {
+	transition-duration: 0.45s;
+	box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.25);
+}
+.on_github_link {
+	margin-left: 24px;
+	color: black;
+	opacity: 0.7;
+}
+.search_bar {
+	margin-top: 30px;
+}
+.search_bar > input {
+	width: 600px;
+	height: 49px;
+	border: 1px solid #d2d2d2;
+	padding-left: 20px;
+	font-size: 13px;
+	outline: none;
+	transition-duration: 0.45s;
+}
+.search_bar > input:focus {
+	box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.25);
+}
+.search_bar > input::placeholder {
+	color: #afafaf;
+}
+.create_own_sc_link {
+	margin-top: 12px;
+	margin-left: 30px;
+}
+.create_own_sc_link > a {
+	color: rgba(0, 0, 0, 0.3);
+	font-weight: 500;
+	text-decoration: none;
+	font-size: 13px;
+}
+.shortcuts {
+	margin-top: 22px;
+	display: flex;
+	width: 786px;
+	align-items: center;
+	padding-bottom: 20px;
+}
+.shortcuts > .sub {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+.shortcut_item {
+	width: 250px;
+	height: 25px;
+	display: flex;
+	margin-top: 8px;
+	flex-direction: row;
+}
+.shortcut_item > .sc {
+	background-color: #00cec9;
+	color: #115c5b;
+	width: 70px;
+	min-width: 70px;
+	height: 25px;
+	border-radius: 2px;
+	font-size: 13px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.shortcut_item > .name {
+	margin-left: 12px;
+	font-size: 12px;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	font-weight: 500;
+	text-overflow: ellipsis;
+	color: #115c5b;
+	white-space: nowrap;
+	overflow: hidden;
+	cursor: pointer;
+}
+.nothingFound > a {
+	color: #115c5b;
+}

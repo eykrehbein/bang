@@ -4,9 +4,101 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<link
+			href="https://fonts.googleapis.com/css?family=Open+Sans:600,700"
+			rel="stylesheet"
+		/>
+		<link rel="stylesheet" href="web/css/styles.css" />
 		<title>Bang</title>
 	</head>
 	<body>
-		Hello World!
+		<div class="app">
+			<div class="headers">
+				<!--prettier-ignore-->
+				<a class="header_link" style="margin-right: 21px" href="https://github.com/eykrehbein/bang/wiki">What are bangs?</a>
+				<a class="header_link" href="https://github.com/eykrehbein/bang">
+					Github
+				</a>
+			</div>
+			<div class="center">
+				<div class="title">
+					Boost your productivity<br />by <span class="c">using</span>
+					<span style="color: #00CEC9;" class="typed">!bangs</span>
+				</div>
+				<div class="navbar">
+					<div class="add_to">
+						<button
+							v-if="browser === 'chrome'"
+							class="addButton"
+							@click="chromeInstall"
+						>
+							Add to Chrome
+						</button>
+						<button v-if="browser === 'firefox'" class="addButton">
+							Add to Firefox
+						</button>
+						<button v-if="browser === 'opera'" class="addButton">
+							Add to Opera
+						</button>
+						<button v-if="browser === null" class="addButton">
+							Get it from source
+						</button>
+						<a
+							class="on_github_link"
+							href="https://github.com/eykrehbein/bang"
+							target="_blank"
+						>
+							View source on Github
+						</a>
+					</div>
+				</div>
+				<div class="search_bar">
+					<input
+						type="text"
+						placeholder="Search for shortcuts..."
+						v-model="searchInput"
+					/>
+					<div class="create_own_sc_link">
+						<a href="#">Add your own shortcut</a>
+					</div>
+				</div>
+
+				<div class="shortcuts">
+					<div class="sub" v-if="searchInput === ''">
+						<Shortcut
+							v-for="cmd in shortcuts"
+							:name="cmd.name"
+							:sc="cmd.cmd"
+							:target="cmd.target"
+							:target_search="cmd.target_s"
+						></Shortcut>
+					</div>
+					<div
+						class="sub"
+						v-if="searchInput !== '' && searchResults.length > 0"
+					>
+						<Shortcut
+							v-for="cmd in searchResults"
+							:name="cmd.name"
+							:sc="cmd.cmd"
+							:target="cmd.target"
+							:target_search="cmd.target_s"
+						></Shortcut>
+					</div>
+				</div>
+				<div
+					class="nothingFound"
+					v-if="searchInput !== '' && searchResults.length === 0"
+				>
+					Nothing found. <a href="#">How about adding your own shortcut?</a>
+				</div>
+			</div>
+		</div>
+
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+		<script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.9"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.4.4/fuse.min.js"></script>
+		<script src="web/js/main.js"></script>
 	</body>
 </html>
