@@ -71,7 +71,10 @@
 						v-model="searchInput"
 					/>
 					<div class="create_own_sc_link">
-						<a href="#">Add your own shortcut</a>
+						<a
+							href="https://github.com/eykrehbein/bang/wiki/Contribute-your-own-!bangs"
+							>Add your own shortcut</a
+						>
 					</div>
 				</div>
 
@@ -102,7 +105,11 @@
 					class="nothingFound"
 					v-if="searchInput !== '' && searchResults.length === 0"
 				>
-					Nothing found. <a href="#">How about adding your own shortcut?</a>
+					Nothing found.
+					<a
+						href="https://github.com/eykrehbein/bang/wiki/Contribute-your-own-!bangs"
+						>How about adding your own shortcut?</a
+					>
 				</div>
 			</div>
 		</div>
