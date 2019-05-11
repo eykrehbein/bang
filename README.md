@@ -45,4 +45,4 @@ You can also define a language or TLD tags directly in the URL bar. The direct i
 
 Currently, the amount of shortcuts which are included in this project is nowhere near the amount that DuckDuckGo provides (over 12.000). _**But you can help to increase the amount of supported shortcuts.**_. [See more at: How to add a Shortcut](#Contributing-shortcuts)
 
-# More information in the [wiki](https://github.com/eykrehbein/bang/wiki)
+# More information in the [wiki](https://github.com/eykrehbein/bang/wiki/Installation)
