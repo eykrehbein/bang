@@ -172,6 +172,11 @@
 			"name": "TensorFlow",
 			"target": "https://tensorflow.org",
 			"target_s": "https://www.tensorflow.org/s/results/?q={{q}}"
+		},
+		{
+			"cmd": "!cl",
+			"name": "Google Colab",
+			"target": "https://colab.research.google.com"
 		}
 	]
 }
