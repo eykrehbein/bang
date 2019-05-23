@@ -177,6 +177,13 @@
 			"cmd": "!cl",
 			"name": "Google Colab",
 			"target": "https://colab.research.google.com"
-		}
+		},
+		{
+			"cmd": "!kg",
+			"name": "Kaggle",
+			"target": "https://kaggle.com",
+			"target_s": "https://www.kaggle.com/datasets?search={{q}}"
+		},
+		
 	]
 }
