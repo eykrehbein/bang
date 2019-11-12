@@ -189,6 +189,12 @@
 			"name": "Font Awesome",
 			"target": "https://fontawesome.com",
 			"target_s": "https://fontawesome.com/icons?d=gallery&q={{q}}"
+		},
+		{
+			"cmd": "!syn",
+			"name": "TheSaurus Synonyms",
+			"target": "https://www.thesaurus.com/",
+			"target_s": "https://www.thesaurus.com/browse/{{q}}"
 		}
 		
 	]
