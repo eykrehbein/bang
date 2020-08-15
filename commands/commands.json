@@ -1,6 +1,12 @@
 {
 	"cmds": [
 		{
+			"cmd": "!npm",
+			"name": "NPM",
+			"target": "https://www.npmjs.com",
+			"target_s": "https://www.npmjs.com/search?q={{q}}"
+		},
+		{
 			"cmd": "!a",
 			"name": "Amazon",
 			"target": "https://www.amazon.{{tld}}",
